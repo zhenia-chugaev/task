@@ -1,5 +1,6 @@
 import { useNavigate, Link } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
+import { Header, Main } from '../components/Layout';
 import AuthForm from '../components/AuthForm';
 
 const LoginPage = () => {
@@ -22,11 +23,16 @@ const LoginPage = () => {
   );
 
   return (
-    <AuthForm
-      actionType="Log in"
-      handleSubmit={handleSubmit}
-      formText={formText}
-    />
+    <>
+      <Header />
+      <Main>
+        <AuthForm
+          actionType="Log in"
+          handleSubmit={handleSubmit}
+          formText={formText}
+        />
+      </Main>
+    </>
   );
 };
 
