@@ -10,7 +10,7 @@ const SignupPage = () => {
   const handleSubmit = async (values, onError) => {
     try {
       await signUp(values.email, values.password);
-      navigate('/todo');
+      navigate('/');
     } catch {
       onError();
     }
