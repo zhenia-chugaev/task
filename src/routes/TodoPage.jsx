@@ -1,6 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { Header, Main } from '../components/Layout';
-import Calendar from '../components/Calendar';
+import { Header, Main, Calendar } from '../components/';
 
 const TodoPage = () => {
   return (

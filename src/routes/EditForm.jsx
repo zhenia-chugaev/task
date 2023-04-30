@@ -1,7 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import { Main } from '../components/Layout';
-import NavPane from '../components/NavPane';
-import TaskForm from '../components/TaskForm';
+import { Main, TaskForm, NavPane } from '../components/';
 import useDatabase from '../hooks/useDatabase';
 import { getTimestamp, getFormattedDate } from '../utils/time';
 import { routes } from './';

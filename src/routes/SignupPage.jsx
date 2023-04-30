@@ -1,7 +1,6 @@
 import { useNavigate, Link } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
-import { Header, Main } from '../components/Layout';
-import AuthForm from '../components/AuthForm';
+import { Header, Main, AuthForm } from '../components/';
 
 const SignupPage = () => {
   const { signUp } = useAuth();
