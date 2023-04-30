@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import AuthProvider from './components/AuthProvider';
-import DatabaseProvider from './components/DatabaseProvider';
+import AuthProvider from './providers/AuthProvider';
+import DatabaseProvider from './providers/DatabaseProvider';
 import Router from './routes';
 import './index.css';
 
