@@ -15,7 +15,7 @@ const MainPage = () => {
           The ultimate solution for managing your tasks
         </h1>
         {user && <div className="text-center">
-          <Button as={Link} to={routes.todo()} variant="warning">
+          <Button as={Link} to={routes.todo()} variant="secondary">
             Start Planning
           </Button>
         </div>}

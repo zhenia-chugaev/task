@@ -61,7 +61,7 @@ const TaskForm = ({ values, actionType, handleSubmit }) => {
             Something went wrong. Try again.
           </Form.Control.Feedback>
         </Form.Group>
-        <Button className="w-100" variant="warning" type="submit">
+        <Button className="w-100" variant="primary" type="submit">
           {actionType}
         </Button>
       </Form>
