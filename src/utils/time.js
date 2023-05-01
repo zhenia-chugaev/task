@@ -1,12 +1,13 @@
-import { format, getTime } from 'date-fns';
+import moment from 'moment';
 
 const getFormattedDate = (date = Date.now()) => {
-  const formattedDate = format(date, 'yyyy-MM-dd');
+  const formattedDate = moment(date).format('YYYY-MM-DD');
   return formattedDate;
 };
 
 const getTimestamp = (formattedDate) => {
-  const timestamp = getTime(new Date(formattedDate));
+  const date = new Date(formattedDate);
+  const timestamp = moment(date).valueOf();
   return timestamp;
 };
 
