@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import { Stack, Card } from 'react-bootstrap';
 import cn from 'classnames';
 import useDatabase from '../hooks/useDatabase';
@@ -7,6 +8,8 @@ import { getTasksDataByDay } from '../utils/tasks';
 import { routes } from '../routes';
 
 const Calendar = () => {
+  const { listNum } = useParams();
+  const [selectedDay, setSelectedDay] = useState(Number(listNum));
   const { tasks } = useDatabase();
 
   const dayOfTheMonth = Time.getDay();
@@ -24,10 +27,10 @@ const Calendar = () => {
             const hasIncompletedTasks = dayTasks.some((task) => !task.completed);
 
             const dayClassName = cn('calendar-day', 'text-center', 'rounded-4', {
-              'bg-dark': i === 0,
-              'text-light': i === 0,
-              'text-primary': i !== 0 && dayName === 'Sun',
-              'border-primary': i !== 0 && dayName === 'Sun',
+              'bg-dark': i === selectedDay,
+              'text-light': i === selectedDay,
+              'text-primary': i !== selectedDay && dayName === 'Sun',
+              'border-primary': i !== selectedDay && dayName === 'Sun',
             });
 
             const barClassName = cn('status-bar', {
@@ -36,7 +39,7 @@ const Calendar = () => {
             });
 
             return (
-              <div key={i}>
+              <div key={i} onClick={() => setSelectedDay(i)}>
                 <Card className={dayClassName} as={Link} to={routes.todo(i)}>
                   <Card.Body>
                     <span className="d-block mb-1">{dayName}</span>
