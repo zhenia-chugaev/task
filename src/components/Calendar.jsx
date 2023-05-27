@@ -49,8 +49,13 @@ const Calendar = () => {
           });
 
           return (
-            <div key={i} onClick={() => setSelectedDay(i)}>
-              <Card className={dayClassName} as={Link} to={routes.todo(i)}>
+            <div key={i}>
+              <Card
+                className={dayClassName}
+                as={Link}
+                to={routes.todo(i)}
+                onClick={() => setSelectedDay(i)}
+              >
                 <Card.Body>
                   <span className="d-block mb-1">{dayName}</span>
                   <span className="fw-bold">{day}</span>
