@@ -11,7 +11,6 @@ header {
 main {
   height: 100%;
   max-height: calc(100% - 55px);
-  padding-top: 35px;
 }
 
 .app {
@@ -22,7 +21,11 @@ main {
 }
 
 .heading {
-  margin: 30px 0 45px;
+  margin: 65px 0 45px;
+}
+
+.nav-pane {
+  padding-top: 35px;
 }
 
 .calendar {
@@ -124,6 +127,18 @@ main {
 }
 
 @media (min-width: 576px) {
+  main {
+    padding-top: 35px;
+  }
+
+  .heading {
+    margin-top: 30px;
+  }
+
+  .nav-pane {
+    padding-top: 0;
+  }
+
   .auth-form {
     width: 50%;
   }

@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 
 const NavPane = ({ title, reference }) => {
   return (
-    <div className="d-flex align-items-center">
+    <div className="nav-pane d-flex align-items-center">
       <Button className="me-2 link-dark" as={Link} to={reference} variant="link">
         <i className="bi bi-chevron-left" />
       </Button>
