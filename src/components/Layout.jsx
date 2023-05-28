@@ -25,10 +25,10 @@ const Header = () => {
   );
 };
 
-const Main = ({ children }) => (
-  <main>
-    <Container>
-      {children}
+const Main = (props) => (
+  <main {...props}>
+    <Container className="h-100">
+      {props.children}
     </Container>
   </main>
 );
