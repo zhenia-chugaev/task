@@ -1,13 +1,19 @@
 import { useState, useEffect, useRef } from 'react';
 import { useFormik } from 'formik';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Spinner, Form } from 'react-bootstrap';
 
 const TaskForm = ({ values, actionType, handleSubmit }) => {
   const [isInvalid, setIsInvalid] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const inputRef = useRef(null);
 
   useEffect(() => inputRef.current.focus(), []);
+
+  const onError = () => {
+    setIsInvalid(true);
+    setIsLoading(false);
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -17,7 +23,10 @@ const TaskForm = ({ values, actionType, handleSubmit }) => {
       completed: false,
       ...values,
     },
-    onSubmit: (values) => handleSubmit(values, () => setIsInvalid(true)),
+    onSubmit: (values) => {
+      setIsLoading(true);
+      handleSubmit(values, onError);
+    },
   });
 
   return (
@@ -61,8 +70,8 @@ const TaskForm = ({ values, actionType, handleSubmit }) => {
             Something went wrong. Try again.
           </Form.Control.Feedback>
         </Form.Group>
-        <Button className="w-100" variant="primary" type="submit">
-          {actionType}
+        <Button className="w-100" variant="primary" type="submit" disabled={isLoading}>
+          {isLoading ? <Spinner as="span" animation="border" size="sm" /> : actionType}
         </Button>
       </Form>
     </div>

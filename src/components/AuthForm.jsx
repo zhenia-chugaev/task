@@ -1,22 +1,31 @@
 import { useState, useEffect, useRef } from 'react';
 import { useLocation, Navigate } from 'react-router-dom';
 import { useFormik } from 'formik';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Spinner, Form } from 'react-bootstrap';
 import useAuth from '../hooks/useAuth';
 
 const AuthForm = ({ actionType, formText, handleSubmit }) => {
   const [isInvalid, setIsInvalid] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const inputRef = useRef(null);
 
   useEffect(() => inputRef.current.focus(), []);
+
+  const onError = () => {
+    setIsInvalid(true);
+    setIsLoading(false);
+  };
 
   const formik = useFormik({
     initialValues: {
       email: '',
       password: '',
     },
-    onSubmit: (values) => handleSubmit(values, () => setIsInvalid(true)),
+    onSubmit: (values) => {
+      setIsLoading(true);
+      handleSubmit(values, onError);
+    },
   });
 
   const { user } = useAuth();
@@ -56,7 +65,9 @@ const AuthForm = ({ actionType, formText, handleSubmit }) => {
             Something went wrong. Check if your email/password is correct.
           </Form.Control.Feedback>
         </Form.Group>
-        <Button className="w-100 my-2" variant="dark" type="submit">{actionType}</Button>
+        <Button className="w-100 my-2" variant="dark" type="submit" disabled={isLoading}>
+          {isLoading ? <Spinner as="span" animation="border" size="sm" /> : actionType}
+        </Button>
         <Form.Text className="d-block text-center">{formText}</Form.Text>
       </Form>
     </div>
