@@ -1,7 +1,8 @@
 import { createContext } from 'react';
 
 const AuthContext = createContext({
-  isUserLoggedIn: false,
+  user: null,
+  signUp: () => {},
   logIn: () => {},
   logOut: () => {},
 });
