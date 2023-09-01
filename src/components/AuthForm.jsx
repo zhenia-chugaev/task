@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Navigate } from 'react-router-dom';
+import { useLocation, Navigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { Button, Form } from 'react-bootstrap';
 import useAuth from '../hooks/useAuth';
@@ -20,8 +20,9 @@ const AuthForm = ({ actionType, formText, handleSubmit }) => {
   });
 
   const { user } = useAuth();
+  const location = useLocation();
 
-  return user ? <Navigate to='/todo' /> : (
+  return user ? <Navigate to={location.state.from.pathname} /> : (
     <div className="auth-form mx-auto">
       <Form className="mt-5" onSubmit={formik.handleSubmit}>
         <Form.Group className="mb-3" controlId="email">
