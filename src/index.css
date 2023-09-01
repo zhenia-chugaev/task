@@ -10,3 +10,14 @@ body {
 .heading {
   margin-top: 65px;
 }
+
+.auth-form {
+  width: 75%;
+  padding-top: 80px;
+}
+
+@media (min-width: 576px) {
+  .auth-form {
+    width: 50%;
+  }
+}

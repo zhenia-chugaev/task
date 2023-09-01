@@ -1,13 +1,9 @@
-import { useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
-import AuthContext from '../contexts/AuthContext';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
+import useAuth from '../hooks/useAuth';
 
 const App = () => {
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
-
-  const logIn = () => setIsUserLoggedIn(true);
-  const logOut = () => setIsUserLoggedIn(false);
+  const { user, logOut } = useAuth();
 
   return (
     <div className="app">
@@ -16,7 +12,7 @@ const App = () => {
           <Navbar>
             <Navbar.Brand as={Link} to="/">Tassker</Navbar.Brand>
             <Nav className="ms-auto">
-              {isUserLoggedIn
+              {user
                 ? <Button variant="dark" onClick={logOut}>Log out</Button>
                 : <>
                   <Nav.Link as={Link} to="/signup" className="me-3">Sign up</Nav.Link>
@@ -29,9 +25,7 @@ const App = () => {
       </header>
       <main>
         <Container>
-          <AuthContext.Provider value={{ isUserLoggedIn, logIn, logOut }}>
-            <Outlet />
-          </AuthContext.Provider>
+          <Outlet />
         </Container>
       </main>
     </div>
