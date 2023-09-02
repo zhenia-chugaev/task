@@ -1,10 +1,10 @@
 # Tassker
 
-## Description
-To-do list manager.
+## How to run the app
+Live demo is available at [https://clever-to-do-list-1122b.web.app/](https://clever-to-do-list-1122b.web.app/).
 
 ## Application stack
-Besides **Firebase** platform and **React** library (create-react-app was used as a boilerplate) the following tools were applied for developing the application:
+Along with **Firebase** platform and **React** library (create-react-app was used as a boilerplate) the following tools were applied for developing the application:
 - **React Router** for client-side routing;
 - **Bootstrap** components and icons formed the basis of application interface;
 - **Formik** library was utilized to handle forms data;
@@ -29,3 +29,6 @@ Entities in the database are structured as follows:
   }
 }
 ```
+
+Live example:
+![Screenshot from 2023-05-07 16-59-06](https://user-images.githubusercontent.com/89708037/236699165-52306138-5cf0-4901-bbde-cd5b83dc8ba1.png)
