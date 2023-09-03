@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
-import { Checkbox, ErrorMessage } from '../components/'
-import useDatabase from '../hooks/useDatabase';
-import { getTasksDataByDay } from '../utils/tasks';
+import { Checkbox, ErrorMessage } from '#components'
+import useDatabase from '#hooks/useDatabase';
+import { getTasksDataByDay } from '#utils/tasks';
 import { routes } from './';
 
 const TodoList = () => {

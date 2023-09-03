@@ -27,6 +27,14 @@
     "deploy": "npm run build && firebase deploy --only hosting",
     "eject": "react-scripts eject"
   },
+  "imports": {
+    "#components": "./src/components",
+    "#contexts/*": "./src/contexts/*",
+    "#hooks/*": "./src/hooks/*",
+    "#providers/*": "./src/providers/*",
+    "#routes": "./src/routes",
+    "#utils/*": "./src/utils/*"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",

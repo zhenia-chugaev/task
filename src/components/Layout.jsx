@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
-import useAuth from '../hooks/useAuth';
+import useAuth from '#hooks/useAuth';
 
 const Header = () => {
   const { user, logOut } = useAuth();

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
-import { Header, Main } from '../components/Layout';
-import useAuth from '../hooks/useAuth';
+import { Header, Main } from '#components';
+import useAuth from '#hooks/useAuth';
 import { routes } from './';
 
 const MainPage = () => {

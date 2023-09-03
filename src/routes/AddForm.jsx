@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { Main, TaskForm, NavPane } from '../components/';
-import useDatabase from '../hooks/useDatabase';
-import * as Time from '../utils/time';
+import { Main, TaskForm, NavPane } from '#components';
+import useDatabase from '#hooks/useDatabase';
+import * as Time from '#utils/time';
 import { routes } from './';
 
 const AddForm = () => {

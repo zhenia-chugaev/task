@@ -5,9 +5,9 @@ import {
   push, onValue, set, remove,
   orderByChild, startAt,
 } from 'firebase/database';
-import useAuth from '../hooks/useAuth';
-import DatabaseContext from '../contexts/DatabaseContext';
-import * as Time from '../utils/time';
+import useAuth from '#hooks/useAuth';
+import DatabaseContext from '#contexts/DatabaseContext';
+import * as Time from '#utils/time';
 
 const DatabaseProvider = ({ children, databaseInstance }) => {
   const [tasks, setTasks] = useState({});

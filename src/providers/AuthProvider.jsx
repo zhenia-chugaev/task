@@ -5,7 +5,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from 'firebase/auth';
-import AuthContext from '../contexts/AuthContext';
+import AuthContext from '#contexts/AuthContext';
 
 const AuthProvider = ({ children, authInstance }) => {
   const [user, setUser] = useState(null);

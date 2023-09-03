@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
-import { Main, Column, NavPane, Checkbox, ErrorMessage } from '../components/';
-import useDatabase from '../hooks/useDatabase';
+import { Main, Column, NavPane, Checkbox, ErrorMessage } from '#components';
+import useDatabase from '#hooks/useDatabase';
 import { routes } from './';
 
 const TaskPage = () => {

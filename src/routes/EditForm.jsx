@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import { Main, TaskForm, NavPane } from '../components/';
-import useDatabase from '../hooks/useDatabase';
-import { getTimestamp, getFormattedDate } from '../utils/time';
+import { Main, TaskForm, NavPane } from '#components';
+import useDatabase from '#hooks/useDatabase';
+import { getTimestamp, getFormattedDate } from '#utils/time';
 import { routes } from './';
 
 const EditForm = () => {

@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useLocation, Navigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { Button, Spinner, Form } from 'react-bootstrap';
-import useAuth from '../hooks/useAuth';
+import useAuth from '#hooks/useAuth';
 
 const AuthForm = ({ actionType, formText, handleSubmit }) => {
   const [isInvalid, setIsInvalid] = useState(false);

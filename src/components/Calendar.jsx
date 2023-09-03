@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Stack, Card } from 'react-bootstrap';
 import cn from 'classnames';
-import useDatabase from '../hooks/useDatabase';
-import * as Time from '../utils/time';
-import { getTasksDataByDay } from '../utils/tasks';
-import { routes } from '../routes';
+import useDatabase from '#hooks/useDatabase';
+import * as Time from '#utils/time';
+import { getTasksDataByDay } from '#utils/tasks';
+import { routes } from '#routes';
 
 const isScrollOver = (element) => {
   const scrollWidth = Math.ceil(element.scrollLeft + element.clientWidth);

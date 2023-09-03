@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import AuthProvider from './providers/AuthProvider';
-import DatabaseProvider from './providers/DatabaseProvider';
-import Router from './routes';
+import AuthProvider from '#providers/AuthProvider';
+import DatabaseProvider from '#providers/DatabaseProvider';
+import Router from '#routes';
 import './index.scss';
 
 import { initializeApp } from 'firebase/app';
